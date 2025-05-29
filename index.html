@@ -1,101 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple File Explorer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font for a clean look */
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center p-4">
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">Open an HTML File</h1>
-        <p class="text-gray-600 mb-6">
-            Enter the name of an HTML file (e.g., <code class="bg-gray-100 px-1 py-0.5 rounded text-sm">example.html</code>)
-            to "open" it in a simulated viewer.
-        </p>
+    <title>Monarch Epoch</title>
+  </head>
 
-        <div class="mb-6">
-            <label for="filenameInput" class="block text-left text-gray-700 text-sm font-medium mb-2">
-                Filename:
-            </label>
-            <input
-                type="text"
-                id="filenameInput"
-                placeholder="e.g., mypage.html"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-            >
-        </div>
+  <body>
+  <h1>Monarch Epoch</h1>
+    <br><br>Type file name below
 
-        <button
-            onclick="openFile()"
-            class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 shadow-md"
-        >
-            Open File
-        </button>
 
-        <p class="text-sm text-gray-500 mt-6">
-            <span class="font-bold">Note:</span> This will navigate to a generic viewer page. For actual file system access, a server-side application is required.
-        </p>
-    </div>
 
-    <script>
-        /**
-         * @function openFile
-         * @description Retrieves the filename from the input field,
-         * encodes it, and navigates to the viewer.html page, passing
-         * the filename as a URL query parameter.
-         */
-        function openFile() {
-            const filename = document.getElementById('filenameInput').value;
 
-            // Check if the filename is empty
-            if (!filename) {
-                // Instead of alert, display a message within the UI
-                displayMessage('Please enter a filename!', 'error');
-                return;
-            }
-
-            // Encode the filename to ensure it's safe for use in a URL
-            const encodedFilename = encodeURIComponent(filename);
-
-            // Navigate to the viewer.html page, passing the filename as a query parameter.
-            // This simulates "opening" the file by displaying its name in the next page.
-            window.location.href = `viewer.html?filename=${encodedFilename}`;
-        }
-
-        /**
-         * @function displayMessage
-         * @description Displays a temporary message to the user.
-         * @param {string} message - The message to display.
-         * @param {string} type - The type of message ('success' or 'error').
-         */
-        function displayMessage(message, type) {
-            let messageDiv = document.getElementById('messageDiv');
-            if (!messageDiv) {
-                messageDiv = document.createElement('div');
-                messageDiv.id = 'messageDiv';
-                messageDiv.className = 'mt-4 p-3 rounded-lg text-sm font-medium';
-                document.querySelector('.bg-white').appendChild(messageDiv);
-            }
-
-            messageDiv.textContent = message;
-            if (type === 'error') {
-                messageDiv.className = 'mt-4 p-3 rounded-lg text-sm font-medium bg-red-100 text-red-700';
-            } else {
-                messageDiv.className = 'mt-4 p-3 rounded-lg text-sm font-medium bg-green-100 text-green-700';
-            }
-
-            // Remove the message after a few seconds
-            setTimeout(() => {
-                messageDiv.remove();
-            }, 3000);
-        }
-    </script>
-</body>
+  </body>d
 </html>
