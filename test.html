@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for a clean look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-teal-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Viewing File</h1>
+
+        <div class="bg-gray-100 border border-gray-200 p-4 rounded-lg mb-8">
+            <p class="text-gray-700 text-lg">You are currently viewing:</p>
+            <p id="displayedFilename" class="text-blue-600 text-2xl font-semibold break-words"></p>
+        </div>
+
+        <button
+            onclick="goBack()"
+            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-200 shadow-md"
+        >
+            Go Back
+        </button>
+    </div>
+
+    <script>
+        /**
+         * @function getQueryParam
+         * @description Parses the URL to extract a specific query parameter.
+         * @param {string} name - The name of the query parameter to find.
+         * @returns {string|null} The decoded value of the parameter, or null if not found.
+         */
+        function getQueryParam(name) {
+            // Create a URLSearchParams object from the current URL's query string
+            const urlParams = new URLSearchParams(window.location.search);
+            // Get the value of the specified parameter and decode it
+            return urlParams.get(name);
+        }
+
+        /**
+         * @function displayFilename
+         * @description Retrieves the filename from the URL query parameters
+         * and displays it on the page.
+         */
+        function displayFilename() {
+            const filename = getQueryParam('filename');
+            const filenameElement = document.getElementById('displayedFilename');
+
+            if (filename) {
+                filenameElement.textContent = filename;
+            } else {
+                filenameElement.textContent = 'No filename specified.';
+                filenameElement.classList.add('text-red-500'); // Indicate an error
+            }
+        }
+
+        /**
+         * @function goBack
+         * @description Navigates back to the previous page in the browser history.
+         * This will typically take the user back to index.html.
+         */
+        function goBack() {
+            window.history.back();
+        }
+
+        // Call displayFilename when the page loads to show the filename
+        window.onload = displayFilename;
+    </script>
+</body>
+</html>
