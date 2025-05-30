@@ -13,14 +13,14 @@
     <div id="results"></div>
 
     <script>
-        const searchQuery = document.getElementsById('fileName')
+        const searchQuery = document.getElementsById("fileName")
 
         function openFile(){
-            if(searchQuery == "Test.txt") {
-                document.getElementById('results').innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
-            }else{
-                document.getElementById('results').innerHTML = 'File Not Found'
-            }
+            // if(searchQuery == "Test.txt") {
+               // document.getElementById('results').innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
+            // }else{
+                document.getElementById('results').innerHTML = searchQuery
+            // }
         }
 
 
