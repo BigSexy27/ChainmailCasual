@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Results</title>
 </head>
-<body>
+<body onload="openFile()">
     <h1>Monarch Epoch</h1>
     <br><br>
 
@@ -14,13 +14,17 @@
 
     <script>
         const searchQuery = document.getElementsById('fileName')
-        const result = document.getElementById('results')
+
         function openFile(){
-            results.innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
+            if(searchQuery == "Test.txt") {
+                document.getElementById('results').innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
+            }else{
+                document.getElementById('results').innerHTML = 'File Not Found'
+            }
         }
 
 
-        window.onload = openFile
+
     </script>
 
     <br><br>
