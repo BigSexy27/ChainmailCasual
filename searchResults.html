@@ -8,10 +8,18 @@
     <h1>Monarch Epoch</h1>
     <br><br>
 
-    Results action here
+    <button onclick="openFile()">Open My File</button>
 
-    <br>
-    <br>
+    <script>
+        const searchQuery = document.getElementsById('fileName')
+        function openFile() {
+            window.open('/Test.txt', '_self');
+        }
+
+
+    </script>
+
+    <br><br>
     <a href='/'>Back</a>
 
 </body>
