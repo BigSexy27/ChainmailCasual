@@ -8,18 +8,14 @@
     <h1>Monarch Epoch</h1>
     <br><br>
 
-    <button onclick="openFile()">Open My File</button>
-
-    <div>
-        <p><iframe src="/Test.txt" height="400"
-                   width="95%"></iframe></p>
-    </div>
+<!--    <button onclick="openFile()">Open My File</button>-->
+    <div id="results"></div>
 
     <script>
         const searchQuery = document.getElementsById('fileName')
-        function openFile() {
-            window.open('/Test.txt', '_self');
-        }
+        const result = document.getElementById('results')
+        searchQuery.addEventListener('input', (event) => {})
+        document.write('Hello World!')
 
 
     </script>
