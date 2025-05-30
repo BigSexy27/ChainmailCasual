@@ -5,14 +5,32 @@
     <title>Monarch Epoch</title>
   </head>
 
-  <body>
+  <body on>
     <h1>Monarch Epoch</h1>
     <br><br>
-    <form action="/searchResults.html" method="GET">
-      <label for="fileName">File search</label>
-      <br>
-      <input type="text" id="fileName" name="fileName" />
-    </form>
+
+    <label for="fileName">File search</label>
+    <br>
+    <input type="text" id="fileName" name="fileName" />
+    <br>
+    <button onclick="openFile()">Search</button>
+    <br><br>
+
+
+    <div id="results"></div>
+
+    <script>
+      function openFile(){
+        var searchQuery = document.getElementById("fileName").value
+
+        if(searchQuery === "Test.txt") {
+          document.getElementById('results').innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
+        }else{
+          document.getElementById('results').innerHTML = 'File not found!'
+        }
+      }
+
+    </script>
 
   </body>
 </html>

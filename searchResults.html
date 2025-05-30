@@ -4,24 +4,18 @@
     <meta charset="UTF-8">
     <title>Results</title>
 </head>
-<body onload="openFile()">
+<body>
     <h1>Monarch Epoch</h1>
     <br><br>
 
-
+<button onclick="openFile()">Open My File</button>
 
     <div id="results"></div>
 
     <script>
-        const searchQuery = document.getElementsById("fileName")
+        const searchQuery = document.getElementsById('fileName')
+        const result = document.getElementById('results')
 
-        function openFile(){
-            // if(searchQuery == "Test.txt") {
-               // document.getElementById('results').innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
-            // }else{
-                document.getElementById('results').innerHTML = searchQuery
-            // }
-        }
 
 
 
