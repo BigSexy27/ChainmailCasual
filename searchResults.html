@@ -15,12 +15,12 @@
     <script>
         const searchQuery = document.getElementsById('fileName')
         const result = document.getElementById('results')
-
+        function openFile(){
             results.innerHTML = '<p><iframe src="/Test.txt" height="95%" width="95%"></iframe></p>'
+        }
 
 
-
-
+        window.onload = openFile
     </script>
 
     <br><br>
